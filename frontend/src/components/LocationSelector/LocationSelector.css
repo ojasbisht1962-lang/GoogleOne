@@ -1,0 +1,275 @@
+.location-selector {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.location-selector.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.location-header {
+  margin-bottom: 15px;
+}
+
+.location-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e293b;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.location-label .required {
+  color: #dc2626;
+  margin-left: 4px;
+}
+
+.location-help {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+.location-current {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+
+.location-current:hover {
+  border-color: #cbd5e1;
+  background: #fff;
+}
+
+.location-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.location-text {
+  flex: 1;
+  font-size: 15px;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.location-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-location-action {
+  flex: 1;
+  min-width: 180px;
+  padding: 12px 20px;
+  border: 2px solid #e2e8f0;
+  background: white;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-location-action:hover {
+  border-color: #f97316;
+  color: #f97316;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.85);
+}
+
+.btn-location-action:disabled {
+  opacity: 0.85;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-location-action .icon {
+  font-size: 18px;
+}
+
+.btn-current {
+  border-color: #10b981;
+  color: #10b981;
+}
+
+.btn-current:hover {
+  background: #10b981;
+  color: white;
+}
+
+.btn-map {
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+.btn-map:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+.location-map-container {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 16px;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.map-search {
+  margin-bottom: 12px;
+}
+
+.map-search-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.map-search-input:focus {
+  outline: none;
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.85);
+}
+
+.location-map {
+  width: 100%;
+  height: 400px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid #e2e8f0;
+}
+
+.map-instructions {
+  margin-top: 12px;
+  padding: 12px;
+  background: #fffbeb;
+  border: 1px solid #fbbf24;
+  border-radius: 8px;
+}
+
+.map-instructions p {
+  margin: 0;
+  font-size: 14px;
+  color: #92400e;
+}
+
+.map-instructions strong {
+  color: #78350f;
+}
+
+.map-actions {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-confirm-location {
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.85);
+}
+
+.btn-confirm-location:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.85);
+}
+
+.btn-confirm-location .icon {
+  font-size: 18px;
+}
+
+.location-coords {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.location-coords small {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #f97316;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 12px;
+}
+
+.spinner-small {
+  display: inline-block;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .location-actions {
+    flex-direction: column;
+  }
+
+  .btn-location-action {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .location-map {
+    height: 300px;
+  }
+}

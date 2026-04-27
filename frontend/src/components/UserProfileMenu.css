@@ -1,0 +1,224 @@
+.user-profile-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-trigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 14px;
+  background: rgba(255, 140, 0, 0.85);
+  border: 2px solid #FDB913;
+  border-radius: 28px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(255, 140, 0, 0.85);
+  height: 50px;
+  margin-top: 4px;
+}
+
+.profile-trigger:hover {
+  background: linear-gradient(135deg, #FDB913 0%, #F5A623 100%);
+  border-color: #FFCE3D;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.85);
+  color: #FFFFFF;
+}
+.profile-avatar,
+.profile-avatar-placeholder {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  min-width: 38px;
+  min-height: 38px;
+  max-width: 38px;
+  max-height: 38px;
+}
+
+.profile-avatar-placeholder {
+  background: linear-gradient(135deg, #FDB913 0%, #F5A623 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.profile-name {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dropdown-icon {
+  transition: transform 0.3s ease;
+  margin-left: 2px;
+  font-size: 12px;
+}
+
+.dropdown-icon.open {
+  transform: rotate(180deg);
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: #0a0a0a;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(255, 140, 0, 0.85), 0 0 0 1px rgba(255, 140, 0, 0.85);
+  min-width: 280px;
+  z-index: 1000;
+  animation: slideDown 0.3s ease;
+  overflow: hidden;
+  border: 2px solid #FDB913;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-header {
+  padding: 20px;
+  background: linear-gradient(135deg, #FDB913 0%, #F5A623 100%);
+  color: #FFFFFF;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.dropdown-avatar img,
+.avatar-placeholder-large {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+}
+
+.avatar-placeholder-large {
+  background: rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.dropdown-user-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.dropdown-name {
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0 0 4px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dropdown-email {
+  font-size: 13px;
+  margin: 0 0 8px 0;
+  opacity: 0.9;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dropdown-role {
+  display: inline-block;
+  padding: 3px 10px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 0;
+}
+
+.dropdown-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.dropdown-item:hover {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: #dc2626;
+}
+
+.dropdown-item svg {
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.dropdown-item:hover svg {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-name {
+    display: none;
+  }
+
+  .profile-trigger {
+    padding: 8px 12px;
+    min-width: 48px;
+    justify-content: center;
+  }
+
+  .profile-dropdown {
+    min-width: 260px;
+    right: 0;
+  }
+}
+
+/* Ensure visibility on dark backgrounds */
+.dashboard-header .user-profile-menu .profile-trigger,
+.admin-header .user-profile-menu .profile-trigger {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.85);
+}
+
+.dashboard-header .user-profile-menu .profile-trigger:hover,
+.admin-header .user-profile-menu .profile-trigger:hover {
+  background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%);
+  box-shadow: 0 6px 16px rgba(255, 140, 0, 0.85);
+}
+

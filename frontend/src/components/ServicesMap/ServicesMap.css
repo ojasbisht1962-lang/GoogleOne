@@ -1,0 +1,250 @@
+.services-map-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.85);
+  margin-bottom: 24px;
+}
+
+.services-map {
+  width: 100%;
+  height: 100%;
+}
+
+.services-map-loading {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
+  border-radius: 12px;
+}
+
+.services-map-loading .spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #3b82f6;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 12px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.services-map-loading p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Custom Service Marker */
+.custom-service-marker {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.service-marker {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.service-marker:hover {
+  transform: scale(1.3);
+  z-index: 100;
+}
+
+.service-marker-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  border: 3px solid white;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.85);
+}
+
+/* Service Info Window */
+.service-info-window {
+  max-width: 300px;
+  padding: 16px;
+  font-family: 'Inter', sans-serif;
+}
+
+.service-info-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.service-icon-large {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.service-info-header h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #1e293b;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.service-category {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+.service-description {
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.5;
+  margin: 12px 0;
+}
+
+.service-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #f0f9ff;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+
+.price-label {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.price-value {
+  font-size: 16px;
+  color: #3b82f6;
+  font-weight: 700;
+}
+
+.service-location-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #64748b;
+  margin: 8px 0;
+}
+
+.service-location-row .icon {
+  font-size: 14px;
+}
+
+.service-provider {
+  font-size: 13px;
+  color: #475569;
+  margin: 8px 0;
+  padding-top: 8px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.provider-label {
+  color: #64748b;
+  margin-right: 6px;
+}
+
+.provider-name {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.btn-view-service {
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-view-service:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.85);
+}
+
+.map-legend {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.85);
+  font-size: 13px;
+  color: #475569;
+  font-weight: 600;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-marker.service {
+  width: 12px;
+  height: 12px;
+  background: #3b82f6;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.85);
+}
+
+@media (max-width: 768px) {
+  .services-map-container {
+    height: 400px;
+  }
+
+  .service-marker {
+    width: 36px;
+    height: 36px;
+  }
+
+  .service-marker-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .service-info-window {
+    max-width: 260px;
+    padding: 12px;
+  }
+}

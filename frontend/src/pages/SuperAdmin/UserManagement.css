@@ -1,0 +1,353 @@
+.user-management {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
+  padding: 30px;
+}
+
+.page-header {
+  max-width: 1400px;
+  margin: 0 auto 30px;
+}
+
+.btn-back {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  border: 2px solid #FDB913;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+  background: #FDB913;
+  color: #ffffff;
+  transform: translateX(-5px);
+}
+
+.page-header h1 {
+  font-size: 32px;
+  color: #FFFFFF;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}
+
+.page-header p {
+  font-size: 16px;
+  color: #CBD5E1;
+  margin: 0;
+}
+
+.controls {
+  max-width: 1400px;
+  margin: 0 auto 24px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tasker-type-select {
+  padding: 8px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 150px;
+}
+
+.tasker-type-select:hover {
+  border-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(255, 140, 0, 0.85);
+}
+
+.tasker-type-select:focus {
+  outline: none;
+  border-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.85);
+}
+
+.not-applicable {
+  color: #E5E7EB;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.filter-tabs button {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  border: 2px solid #2a2a2a;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-tabs button:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.filter-tabs button.active {
+  background: linear-gradient(135deg, #FDB913 0%, #F5A623 100%);
+  border-color: #ffffff;
+  color: white;
+}
+
+.search-box {
+  flex: 0 0 300px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px 20px;
+  border: 2px solid #2a2a2a;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #ffffff;
+}
+
+.users-table-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(255, 140, 0, 0.85);
+  overflow: hidden;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.users-table thead {
+  background: linear-gradient(135deg, #FDB913 0%, #F5A623 100%);
+  color: #111827;
+}
+
+.users-table th {
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: white;
+}
+
+.users-table td {
+  padding: 16px;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+.users-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.users-table tbody tr:hover {
+  background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%);
+}
+
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #FFFFFF;
+}
+
+.user-cell span {
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+.user-cell img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FDB913 0%, #F5A623 100%);
+  color: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.role-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  position: relative;
+}
+
+/* Multi-role container */
+.multi-role-container {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.multi-role-container .role-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  font-size: 11px;
+}
+
+/* Primary role (currently active) */
+.role-badge.primary-role {
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(255, 140, 0, 0.85);
+  font-weight: 700;
+}
+
+/* Secondary role (available but not active) */
+.role-badge.secondary-role {
+  opacity: 0.8;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+/* Primary indicator (star) */
+.primary-indicator {
+  font-size: 10px;
+  margin-left: 2px;
+  color: #ffd700;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.85);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-badge.active {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-badge.blocked {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-action {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-action.block {
+  background: #fee2e2;
+}
+
+.btn-action.block:hover {
+  background: #ef4444;
+  transform: scale(1.1);
+}
+
+.btn-action.unblock {
+  background: #d1fae5;
+}
+
+.btn-action.unblock:hover {
+  background: #10b981;
+  transform: scale(1.1);
+}
+
+.btn-action.delete {
+  background: #fecaca;
+}
+
+.btn-action.delete:hover {
+  background: #FDB913;
+  transform: scale(1.1);
+}
+
+.no-data {
+  text-align: center;
+  padding: 60px 20px;
+  color: #FFFFFF;
+}
+
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .user-management {
+    padding: 15px;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box {
+    flex: 1;
+  }
+
+  .users-table-container {
+    overflow-x: auto;
+  }
+
+  .users-table {
+    min-width: 800px;
+  }
+}
+

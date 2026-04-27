@@ -1,0 +1,249 @@
+.household-type-selector {
+  width: 100%;
+  margin: 24px 0;
+}
+
+.household-type-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+}
+
+.label-hint {
+  font-size: 13px;
+  font-weight: 400;
+  color: #B0B0B0;
+  margin-left: 8px;
+}
+
+.household-type-loading {
+  text-align: center;
+  padding: 20px;
+  color: #B0B0B0;
+  font-size: 14px;
+}
+
+.household-type-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.household-card {
+  position: relative;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+  border: 2px solid #2a2a2a;
+  border-radius: 16px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.household-card:hover:not(.disabled) {
+  transform: translateY(-4px);
+  border-color: #FDB913;
+  box-shadow: 0 8px 24px rgba(253, 185, 19, 0.85);
+  background: linear-gradient(135deg, #1f1f1f 0%, #141414 100%);
+}
+
+.household-card.selected {
+  border-color: #FDB913;
+  background: linear-gradient(135deg, rgba(253, 185, 19, 0.85) 0%, rgba(245, 166, 35, 0.85) 100%);
+  box-shadow: 0 4px 16px rgba(253, 185, 19, 0.85);
+}
+
+.household-card.selected::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #FDB913, #F5A623, #FFCE3D);
+  border-radius: 16px 16px 0 0;
+}
+
+.household-card.disabled {
+  opacity: 0.85;
+  cursor: not-allowed;
+}
+
+.household-icon {
+  font-size: 48px;
+  margin-bottom: 4px;
+}
+
+.household-info {
+  flex: 1;
+}
+
+.household-label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 6px 0;
+}
+
+.household-description {
+  font-size: 13px;
+  color: #B0B0B0;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.safety-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: rgba(0, 230, 118, 0.85);
+  border: 1px solid;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.safety-badge-icon {
+  font-size: 16px;
+}
+
+.safety-badge-text {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mandatory-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px;
+  background: rgba(253, 185, 19, 0.85);
+  border: 1px solid rgba(253, 185, 19, 0.85);
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.mandatory-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.mandatory-text {
+  font-size: 11px;
+  color: #FDB913;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.selection-checkmark {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #FDB913 0%, #F5A623 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: checkmarkBounce 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.checkmark-icon {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+}
+
+@keyframes checkmarkBounce {
+  0% {
+    transform: scale(0) rotate(-45deg);
+  }
+  50% {
+    transform: scale(1.15) rotate(5deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.enhanced-safety-info {
+  background: linear-gradient(135deg, rgba(0, 230, 118, 0.85) 0%, rgba(0, 200, 83, 0.85) 100%);
+  border: 2px solid rgba(0, 230, 118, 0.85);
+  border-radius: 16px;
+  padding: 20px;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.safety-info-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.safety-shield {
+  font-size: 32px;
+}
+
+.safety-info-header h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #00E676;
+  margin: 0;
+}
+
+.safety-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.safety-features-list li {
+  font-size: 14px;
+  color: #E0E0E0;
+  padding-left: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .household-type-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .household-card {
+    min-height: 140px;
+  }
+  
+  .household-icon {
+    font-size: 40px;
+  }
+  
+  .household-label {
+    font-size: 15px;
+  }
+  
+  .household-description {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,116 @@
+.wallet-balance-widget {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, rgba(253, 185, 19, 0.85), rgba(253, 185, 19, 0.85));
+  border: 1.5px solid rgba(253, 185, 19, 0.85);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 12px;
+}
+
+.wallet-balance-widget:hover {
+  background: linear-gradient(135deg, rgba(253, 185, 19, 0.85), rgba(253, 185, 19, 0.85));
+  border-color: rgba(253, 185, 19, 0.85);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(253, 185, 19, 0.85);
+}
+
+.wallet-icon {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #FDB913, #FFA500);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(253, 185, 19, 0.85);
+}
+
+.wallet-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.wallet-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.wallet-amount {
+  font-size: 15px;
+  font-weight: 700;
+  color: #FDB913;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .wallet-balance-widget {
+    padding: 6px 12px;
+    margin-right: 8px;
+  }
+
+  .wallet-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+  }
+
+  .wallet-label {
+    font-size: 10px;
+  }
+
+  .wallet-amount {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wallet-balance-widget {
+    padding: 6px 10px;
+    gap: 6px;
+  }
+
+  .wallet-info {
+    gap: 1px;
+  }
+
+  .wallet-label {
+    display: none; /* Hide label on very small screens */
+  }
+
+  .wallet-amount {
+    font-size: 14px;
+  }
+}
+
+/* Tasker-specific styling */
+body [data-role="tasker"] .wallet-balance-widget {
+  background: linear-gradient(135deg, rgba(52, 211, 153, 0.85), rgba(52, 211, 153, 0.85));
+  border-color: rgba(52, 211, 153, 0.85);
+}
+
+body [data-role="tasker"] .wallet-balance-widget:hover {
+  background: linear-gradient(135deg, rgba(52, 211, 153, 0.85), rgba(52, 211, 153, 0.85));
+  border-color: rgba(52, 211, 153, 0.85);
+  box-shadow: 0 4px 12px rgba(52, 211, 153, 0.85);
+}
+
+body [data-role="tasker"] .wallet-icon {
+  background: linear-gradient(135deg, #34D399, #10B981);
+  box-shadow: 0 2px 8px rgba(52, 211, 153, 0.85);
+}
+
+body [data-role="tasker"] .wallet-amount {
+  color: #34D399;
+}

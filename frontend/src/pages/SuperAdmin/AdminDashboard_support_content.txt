@@ -1,0 +1,420 @@
+        {/* Support Tab */}
+        {activeTab === 'support' && (
+          <div className="support-content">
+            <div className="support-admin-section">
+              <h2 style={{color: '#d4af37', marginBottom: '20px'}}>🎧 Support Tickets Management</h2>
+
+              {/* Statistics Dashboard */}
+              {supportStatistics && (
+                <div className="stats-grid" style={{marginBottom: '30px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '15px'}}>
+                  <div className="stat-card" style={{background: '#1a1a1a', padding: '20px', borderRadius: '12px', textAlign: 'center'}}>
+                    <div style={{fontSize: '2rem'}}>📊</div>
+                    <div style={{fontSize: '2rem', fontWeight: '700', color: '#d4af37'}}>{supportStatistics.total_tickets}</div>
+                    <div style={{fontSize: '0.9rem', color: '#999'}}>Total</div>
+                  </div>
+                  <div className="stat-card" style={{background: '#1a1a1a', padding: '20px', borderRadius: '12px', textAlign: 'center'}}>
+                    <div style={{fontSize: '2rem'}}>📂</div>
+                    <div style={{fontSize: '2rem', fontWeight: '700', color: '#2196F3'}}>{supportStatistics.open_tickets}</div>
+                    <div style={{fontSize: '0.9rem', color: '#999'}}>Open</div>
+                  </div>
+                  <div className="stat-card" style={{background: '#1a1a1a', padding: '20px', borderRadius: '12px', textAlign: 'center'}}>
+                    <div style={{fontSize: '2rem'}}>⏳</div>
+                    <div style={{fontSize: '2rem', fontWeight: '700', color: '#FDB913'}}>{supportStatistics.in_progress}</div>
+                    <div style={{fontSize: '0.9rem', color: '#999'}}>In Progress</div>
+                  </div>
+                  <div className="stat-card" style={{background: '#1a1a1a', padding: '20px', borderRadius: '12px', textAlign: 'center'}}>
+                    <div style={{fontSize: '2rem'}}>✅</div>
+                    <div style={{fontSize: '2rem', fontWeight: '700', color: '#00E676'}}>{supportStatistics.resolved_tickets}</div>
+                    <div style={{fontSize: '0.9rem', color: '#999'}}>Resolved</div>
+                  </div>
+                  <div className="stat-card" style={{background: '#1a1a1a', padding: '20px', borderRadius: '12px', textAlign: 'center'}}>
+                    <div style={{fontSize: '2rem'}}>🤖</div>
+                    <div style={{fontSize: '2rem', fontWeight: '700', color: '#2196F3'}}>{supportStatistics.ai_handled}</div>
+                    <div style={{fontSize: '0.9rem', color: '#999'}}>AI Tier</div>
+                  </div>
+                  <div className="stat-card" style={{background: '#1a1a1a', padding: '20px', borderRadius: '12px', textAlign: 'center'}}>
+                    <div style={{fontSize: '2rem'}}>👤</div>
+                    <div style={{fontSize: '2rem', fontWeight: '700', color: '#FDB913'}}>{supportStatistics.human_escalated}</div>
+                    <div style={{fontSize: '0.9rem', color: '#999'}}>Human</div>
+                  </div>
+                  <div className="stat-card" style={{background: '#1a1a1a', padding: '20px', borderRadius: '12px', textAlign: 'center'}}>
+                    <div style={{fontSize: '2rem'}}>🚨</div>
+                    <div style={{fontSize: '2rem', fontWeight: '700', color: '#F44336'}}>{supportStatistics.critical_priority}</div>
+                    <div style={{fontSize: '0.9rem', color: '#999'}}>Critical</div>
+                  </div>
+                  <div className="stat-card" style={{background: '#1a1a1a', padding: '20px', borderRadius: '12px', textAlign: 'center'}}>
+                    <div style={{fontSize: '2rem'}}>⚠️</div>
+                    <div style={{fontSize: '2rem', fontWeight: '700', color: '#FF9800'}}>{supportStatistics.auto_escalated}</div>
+                    <div style={{fontSize: '0.9rem', color: '#999'}}>Escalated</div>
+                  </div>
+                </div>
+              )}
+
+              {/* Filter Tabs */}
+              <div style={{display: 'flex', gap: '10px', marginBottom: '20px', flexWrap: 'wrap'}}>
+                <button
+                  style={{
+                    padding: '10px 20px',
+                    borderRadius: '8px',
+                    border: supportTab === 'all' ? '2px solid #d4af37' : '2px solid #333',
+                    background: supportTab === 'all' ? '#d4af37' : '#1a1a1a',
+                    color: supportTab === 'all' ? '#000' : '#fff',
+                    cursor: 'pointer',
+                    fontWeight: '600'
+                  }}
+                  onClick={() => setSupportTab('all')}
+                >
+                  📋 All
+                </button>
+                <button
+                  style={{
+                    padding: '10px 20px',
+                    borderRadius: '8px',
+                    border: supportTab === 'human' ? '2px solid #d4af37' : '2px solid #333',
+                    background: supportTab === 'human' ? '#d4af37' : '#1a1a1a',
+                    color: supportTab === 'human' ? '#000' : '#fff',
+                    cursor: 'pointer',
+                    fontWeight: '600'
+                  }}
+                  onClick={() => setSupportTab('human')}
+                >
+                  👤 Human
+                </button>
+                <button
+                  style={{
+                    padding: '10px 20px',
+                    borderRadius: '8px',
+                    border: supportTab === 'ai' ? '2px solid #d4af37' : '2px solid #333',
+                    background: supportTab === 'ai' ? '#d4af37' : '#1a1a1a',
+                    color: supportTab === 'ai' ? '#000' : '#fff',
+                    cursor: 'pointer',
+                    fontWeight: '600'
+                  }}
+                  onClick={() => setSupportTab('ai')}
+                >
+                  🤖 AI
+                </button>
+                <button
+                  style={{
+                    padding: '10px 20px',
+                    borderRadius: '8px',
+                    border: supportTab === 'critical' ? '2px solid #d4af37' : '2px solid #333',
+                    background: supportTab === 'critical' ? '#d4af37' : '#1a1a1a',
+                    color: supportTab === 'critical' ? '#000' : '#fff',
+                    cursor: 'pointer',
+                    fontWeight: '600'
+                  }}
+                  onClick={() => setSupportTab('critical')}
+                >
+                  🚨 Critical
+                </button>
+                <button
+                  style={{
+                    padding: '10px 20px',
+                    borderRadius: '8px',
+                    border: supportTab === 'complaints' ? '2px solid #d4af37' : '2px solid #333',
+                    background: supportTab === 'complaints' ? '#d4af37' : '#1a1a1a',
+                    color: supportTab === 'complaints' ? '#000' : '#fff',
+                    cursor: 'pointer',
+                    fontWeight: '600'
+                  }}
+                  onClick={() => setSupportTab('complaints')}
+                >
+                  ⚠️ Complaints
+                </button>
+              </div>
+
+              {/* Tickets Content */}
+              <div style={{display: 'grid', gridTemplateColumns: selectedTicket ? '400px 1fr' : '1fr', gap: '20px', minHeight: '500px'}}>
+                {/* Tickets List */}
+                <div style={{background: '#1a1a1a', borderRadius: '12px', padding: '20px', maxHeight: '700px', overflowY: 'auto'}}>
+                  {supportLoading && !selectedTicket ? (
+                    <div style={{textAlign: 'center', padding: '40px', color: '#999'}}>⏳ Loading...</div>
+                  ) : tickets.length === 0 ? (
+                    <div style={{textAlign: 'center', padding: '40px', color: '#999'}}>No tickets found</div>
+                  ) : (
+                    tickets.map(ticket => (
+                      <div
+                        key={ticket._id}
+                        style={{
+                          background: selectedTicket?._id === ticket._id ? '#2a2a2a' : '#0f0f0f',
+                          borderLeft: `4px solid ${getPriorityColor(ticket.priority)}`,
+                          borderRadius: '8px',
+                          padding: '15px',
+                          marginBottom: '12px',
+                          cursor: 'pointer',
+                          transition: 'all 0.3s'
+                        }}
+                        onClick={() => fetchTicketDetails(ticket._id)}
+                        onMouseEnter={(e) => e.currentTarget.style.background = '#2a2a2a'}
+                        onMouseLeave={(e) => {
+                          if (selectedTicket?._id !== ticket._id) {
+                            e.currentTarget.style.background = '#0f0f0f';
+                          }
+                        }}
+                      >
+                        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px'}}>
+                          <div>
+                            <span style={{color: '#d4af37', fontWeight: '700', fontSize: '0.9rem'}}>{ticket.ticket_number}</span>
+                            <span style={{marginLeft: '8px', fontSize: '1.2rem'}}>{ticket.tier === 'ai' ? '🤖' : '👤'}</span>
+                          </div>
+                          <span style={{
+                            background: getPriorityColor(ticket.priority),
+                            color: '#fff',
+                            padding: '4px 10px',
+                            borderRadius: '12px',
+                            fontSize: '0.75rem',
+                            fontWeight: '600'
+                          }}>
+                            {getPriorityIcon(ticket.priority)} {ticket.priority.toUpperCase()}
+                          </span>
+                        </div>
+                        <h4 style={{color: '#fff', margin: '8px 0', fontSize: '1rem'}}>{ticket.subject}</h4>
+                        <p style={{color: '#999', fontSize: '0.85rem', margin: '8px 0', lineHeight: '1.4'}}>{ticket.description.substring(0, 80)}...</p>
+                        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '10px'}}>
+                          <span style={{
+                            background: ticket.status === 'open' ? '#2196F3' :
+                                       ticket.status === 'in_progress' ? '#FDB913' :
+                                       ticket.status === 'resolved' ? '#00E676' : '#666',
+                            color: '#fff',
+                            padding: '4px 10px',
+                            borderRadius: '12px',
+                            fontSize: '0.75rem'
+                          }}>
+                            {ticket.status.replace('_', ' ')}
+                          </span>
+                          <span style={{color: '#666', fontSize: '0.8rem'}}>
+                            {new Date(ticket.created_at).toLocaleDateString()}
+                          </span>
+                        </div>
+                        {ticket.is_complaint && (
+                          <div style={{marginTop: '8px', background: '#f4433620', color: '#f44336', padding: '4px 8px', borderRadius: '4px', fontSize: '0.75rem', fontWeight: '600'}}>
+                            ⚠️ COMPLAINT
+                          </div>
+                        )}
+                        {ticket.escrow_frozen && (
+                          <div style={{marginTop: '8px', background: '#ff980020', color: '#ff9800', padding: '4px 8px', borderRadius: '4px', fontSize: '0.75rem', fontWeight: '600'}}>
+                            🔒 Escrow Frozen
+                          </div>
+                        )}
+                      </div>
+                    ))
+                  )}
+                </div>
+
+                {/* Ticket Detail Panel */}
+                {selectedTicket && (
+                  <div style={{background: '#1a1a1a', borderRadius: '12px', padding: '25px', maxHeight: '700px', overflowY: 'auto'}}>
+                    {/* Header */}
+                    <div style={{marginBottom: '20px', paddingBottom: '15px', borderBottom: '2px solid #333'}}>
+                      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start'}}>
+                        <div>
+                          <h2 style={{color: '#d4af37', margin: '0 0 8px 0', fontSize: '1.5rem'}}>{selectedTicket.ticket_number}</h2>
+                          <h3 style={{color: '#fff', margin: 0, fontSize: '1.2rem'}}>{selectedTicket.subject}</h3>
+                        </div>
+                        <div style={{display: 'flex', gap: '8px', flexDirection: 'column', alignItems: 'flex-end'}}>
+                          <span style={{
+                            background: selectedTicket.tier === 'ai' ? '#2196F3' : '#FDB913',
+                            color: '#fff',
+                            padding: '6px 14px',
+                            borderRadius: '16px',
+                            fontSize: '0.85rem',
+                            fontWeight: '600'
+                          }}>
+                            {selectedTicket.tier === 'ai' ? '🤖 AI' : '👤 Human'}
+                          </span>
+                          <span style={{
+                            background: getPriorityColor(selectedTicket.priority),
+                            color: '#fff',
+                            padding: '6px 14px',
+                            borderRadius: '16px',
+                            fontSize: '0.85rem',
+                            fontWeight: '600'
+                          }}>
+                            {getPriorityIcon(selectedTicket.priority)} {selectedTicket.priority}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Info Section */}
+                    <div style={{background: '#0f0f0f', padding: '15px', borderRadius: '8px', marginBottom: '20px'}}>
+                      <div style={{marginBottom: '10px', color: '#ccc'}}><strong style={{color: '#d4af37'}}>Customer:</strong> {selectedTicket.user_name} ({selectedTicket.user_email})</div>
+                      <div style={{marginBottom: '10px', color: '#ccc'}}><strong style={{color: '#d4af37'}}>Category:</strong> {selectedTicket.category.replace('_', ' ')}</div>
+                      <div style={{marginBottom: '10px', color: '#ccc'}}><strong style={{color: '#d4af37'}}>Created:</strong> {new Date(selectedTicket.created_at).toLocaleString()}</div>
+                      <div style={{marginBottom: '10px', color: '#ccc'}}><strong style={{color: '#d4af37'}}>Description:</strong> {selectedTicket.description}</div>
+                      {selectedTicket.escalation_reason && (
+                        <div style={{marginTop: '10px', color: '#f44336'}}><strong>🚨 Escalation:</strong> {selectedTicket.escalation_reason}</div>
+                      )}
+                    </div>
+
+                    {/* Complaint Section */}
+                    {selectedTicket.is_complaint && (
+                      <div style={{background: '#f4433610', border: '2px solid #f44336', padding: '20px', borderRadius: '12px', marginBottom: '20px'}}>
+                        <h4 style={{color: '#f44336', marginTop: 0}}>⚠️ Complaint Details</h4>
+                        <div style={{color: '#ccc', lineHeight: '1.8'}}>
+                          <div><strong>Against:</strong> {selectedTicket.complaint_against_name} (ID: {selectedTicket.complaint_against_id})</div>
+                          <div><strong>Booking ID:</strong> {selectedTicket.booking_id || 'N/A'}</div>
+                          <div><strong>Payment ID:</strong> {selectedTicket.payment_id_affected || 'N/A'}</div>
+                          <div><strong>Escrow:</strong> <span style={{color: selectedTicket.escrow_frozen ? '#ff9800' : '#00E676', fontWeight: '700'}}>{selectedTicket.escrow_frozen ? '🔒 FROZEN' : '✅ Active'}</span></div>
+                          {selectedTicket.evidence_urls && selectedTicket.evidence_urls.length > 0 && (
+                            <div style={{marginTop: '10px'}}>
+                              <strong>Evidence:</strong>
+                              <div style={{marginTop: '5px'}}>
+                                {selectedTicket.evidence_urls.map((url, idx) => (
+                                  <a key={idx} href={url} target="_blank" rel="noopener noreferrer" style={{display: 'block', color: '#2196F3', marginBottom: '5px'}}>
+                                    📎 Evidence {idx + 1}
+                                  </a>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* AI Review Button */}
+                        {!selectedTicket.ai_review_completed && (
+                          <button 
+                            onClick={handleTriggerAIReview} 
+                            disabled={supportLoading}
+                            style={{
+                              marginTop: '15px',
+                              padding: '12px 24px',
+                              background: '#2196F3',
+                              color: '#fff',
+                              border: 'none',
+                              borderRadius: '8px',
+                              cursor: supportLoading ? 'not-allowed' : 'pointer',
+                              fontWeight: '600',
+                              opacity: supportLoading ? 0.6 : 1
+                            }}
+                          >
+                            {supportLoading ? '⏳ Analyzing...' : '🤖 Trigger AI Review'}
+                          </button>
+                        )}
+
+                        {/* Admin Review Form */}
+                        {!selectedTicket.admin_review_completed && (
+                          <form onSubmit={handleSubmitAdminReview} style={{marginTop: '20px', padding: '20px', background: '#0f0f0f', borderRadius: '8px'}}>
+                            <h5 style={{color: '#d4af37', marginTop: 0}}>👨‍⚖️ Admin Final Review</h5>
+                            <div style={{marginBottom: '15px'}}>
+                              <label style={{display: 'block', marginBottom: '8px', color: '#ccc', fontWeight: '600'}}>Resolution Decision:</label>
+                              <select
+                                value={reviewResult}
+                                onChange={(e) => setReviewResult(e.target.value)}
+                                style={{width: '100%', padding: '10px', borderRadius: '6px', background: '#1a1a1a', border: '1px solid #333', color: '#fff'}}
+                                required
+                              >
+                                <option value="refund_full">💰 Full Refund to Customer</option>
+                                <option value="refund_partial">💵 Partial Refund</option>
+                                <option value="penalty_provider">⚠️ Penalty to Provider</option>
+                                <option value="no_action">❌ No Action</option>
+                              </select>
+                            </div>
+
+                            {(reviewResult === 'refund_full' || reviewResult === 'refund_partial') && (
+                              <div style={{marginBottom: '15px'}}>
+                                <label style={{display: 'block', marginBottom: '8px', color: '#ccc', fontWeight: '600'}}>Refund Amount (₹):</label>
+                                <input
+                                  type="number"
+                                  value={refundAmount}
+                                  onChange={(e) => setRefundAmount(e.target.value)}
+                                  style={{width: '100%', padding: '10px', borderRadius: '6px', background: '#1a1a1a', border: '1px solid #333', color: '#fff'}}
+                                  placeholder="Enter refund amount"
+                                  step="0.01"
+                                  required
+                                />
+                              </div>
+                            )}
+
+                            <div style={{marginBottom: '15px'}}>
+                              <label style={{display: 'block', marginBottom: '8px', color: '#ccc', fontWeight: '600'}}>Review Notes:</label>
+                              <textarea
+                                value={reviewNotes}
+                                onChange={(e) => setReviewNotes(e.target.value)}
+                                style={{width: '100%', padding: '10px', borderRadius: '6px', background: '#1a1a1a', border: '1px solid #333', color: '#fff', minHeight: '80px'}}
+                                placeholder="Explain your decision..."
+                                required
+                              />
+                            </div>
+
+                            <button 
+                              type="submit" 
+                              disabled={supportLoading}
+                              style={{
+                                width: '100%',
+                                padding: '12px',
+                                background: '#00E676',
+                                color: '#000',
+                                border: 'none',
+                                borderRadius: '8px',
+                                cursor: supportLoading ? 'not-allowed' : 'pointer',
+                                fontWeight: '700',
+                                fontSize: '1rem',
+                                opacity: supportLoading ? 0.6 : 1
+                              }}
+                            >
+                              {supportLoading ? '⏳ Submitting...' : '✅ Submit Final Resolution'}
+                            </button>
+                          </form>
+                        )}
+                      </div>
+                    )}
+
+                    {/* Action Buttons */}
+                    <div style={{display: 'flex', gap: '10px', marginBottom: '20px', flexWrap: 'wrap'}}>
+                      <button onClick={handleAssignToMe} style={{padding: '10px 20px', background: '#2196F3', color: '#fff', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: '600'}}>👤 Assign to Me</button>
+                      <button onClick={() => handleUpdateStatus('in_progress')} style={{padding: '10px 20px', background: '#FDB913', color: '#000', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: '600'}}>⏳ In Progress</button>
+                      <button onClick={() => handleUpdateStatus('resolved')} style={{padding: '10px 20px', background: '#00E676', color: '#000', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: '600'}}>✅ Resolve</button>
+                    </div>
+
+                    {/* Messages */}
+                    <div style={{marginBottom: '20px'}}>
+                      <h4 style={{color: '#d4af37', marginBottom: '15px'}}>💬 Conversation</h4>
+                      <div style={{background: '#0f0f0f', borderRadius: '8px', padding: '15px', maxHeight: '300px', overflowY: 'auto', marginBottom: '15px'}}>
+                        {ticketMessages.length === 0 ? (
+                          <p style={{color: '#666', textAlign: 'center', padding: '20px'}}>No messages yet</p>
+                        ) : (
+                          ticketMessages.map(msg => (
+                            <div key={msg._id} style={{marginBottom: '15px', padding: '12px', background: '#1a1a1a', borderRadius: '8px', borderLeft: `3px solid ${msg.sender_type === 'agent' ? '#d4af37' : msg.sender_type === 'ai' ? '#2196F3' : '#00E676'}`}}>
+                              <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '8px'}}>
+                                <strong style={{color: '#d4af37'}}>
+                                  {msg.sender_type === 'agent' && '👤 '}
+                                  {msg.sender_type === 'ai' && '🤖 '}
+                                  {msg.sender_type === 'customer' && '👨‍💼 '}
+                                  {msg.sender_name}
+                                </strong>
+                                <span style={{color: '#666', fontSize: '0.85rem'}}>{new Date(msg.created_at).toLocaleString()}</span>
+                              </div>
+                              <p style={{color: '#ccc', margin: 0, lineHeight: '1.6'}}>{msg.message}</p>
+                            </div>
+                          ))
+                        )}
+                      </div>
+
+                      <form onSubmit={handleSendMessage} style={{display: 'flex', gap: '10px'}}>
+                        <textarea
+                          value={messageText}
+                          onChange={(e) => setMessageText(e.target.value)}
+                          style={{flex: 1, padding: '10px', borderRadius: '8px', background: '#0f0f0f', border: '1px solid #333', color: '#fff', minHeight: '60px'}}
+                          placeholder="Type your response..."
+                        />
+                        <button type="submit" style={{padding: '10px 24px', background: '#d4af37', color: '#000', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: '700'}}>📤 Send</button>
+                      </form>
+                    </div>
+
+                    {/* Resolution Notes */}
+                    <div>
+                      <h4 style={{color: '#d4af37', marginBottom: '10px'}}>📝 Resolution Notes</h4>
+                      <textarea
+                        value={resolutionNotes}
+                        onChange={(e) => setResolutionNotes(e.target.value)}
+                        style={{width: '100%', padding: '10px', borderRadius: '8px', background: '#0f0f0f', border: '1px solid #333', color: '#fff', minHeight: '80px'}}
+                        placeholder="Enter resolution details..."
+                      />
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        )}

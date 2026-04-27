@@ -1,0 +1,375 @@
+.badges-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 20px 40px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.badges-header {
+  text-align: center;
+  margin-bottom: 60px;
+  color: white;
+}
+
+.badges-header h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.85);
+}
+
+.badges-header p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.badge-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.badge-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+.badge-card.bronze::before {
+  background: linear-gradient(90deg, #CD7F32 0%, #8B4513 100%);
+}
+
+.badge-card.silver::before {
+  background: linear-gradient(90deg, #C0C0C0 0%, #808080 100%);
+}
+
+.badge-card.gold::before {
+  background: linear-gradient(90deg, #FFD700 0%, #FFA500 100%);
+}
+
+.badge-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.85);
+}
+
+.badge-icon {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.badge-card h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #2d3748;
+}
+
+.badge-type {
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.badge-benefits {
+  margin: 20px 0;
+  padding: 20px;
+  background: #f7fafc;
+  border-radius: 10px;
+}
+
+.badge-benefits h3 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #2d3748;
+}
+
+.badge-benefits ul {
+  list-style: none;
+  padding: 0;
+}
+
+.badge-benefits li {
+  padding: 8px 0;
+  padding-left: 25px;
+  position: relative;
+  color: #4a5568;
+}
+
+.badge-benefits li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #48bb78;
+  font-weight: bold;
+}
+
+.eligibility-status {
+  margin: 20px 0;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.status-badge.eligible {
+  background: #c6f6d5;
+  color: #22543d;
+}
+
+.status-badge.not-eligible {
+  background: #fed7d7;
+  color: #742a2a;
+}
+
+.criteria-checks {
+  margin-top: 15px;
+  padding: 15px;
+  background: #f7fafc;
+  border-radius: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.criteria-checks h4 {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: #2d3748;
+}
+
+.checks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.check-item.met {
+  background: #c6f6d5;
+}
+
+.check-item.not-met {
+  background: #fed7d7;
+}
+
+.check-icon {
+  font-size: 1.2rem;
+}
+
+.btn-toggle-details {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  background: #4299e1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn-toggle-details:hover {
+  background: #3182ce;
+}
+
+.badge-actions {
+  margin-top: 20px;
+}
+
+.btn-apply {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-apply.eligible {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-apply.eligible:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.85);
+}
+
+.btn-apply.disabled {
+  background: #cbd5e0;
+  color: #718096;
+  cursor: not-allowed;
+}
+
+.pending-status {
+  text-align: center;
+  padding: 15px;
+  background: #faf089;
+  border-radius: 10px;
+  color: #744210;
+  font-weight: bold;
+}
+
+.pending-status small {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  font-weight: normal;
+}
+
+.applications-history {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85);
+}
+
+.applications-history h2 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #2d3748;
+}
+
+.applications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.application-item {
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.application-item:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.85);
+}
+
+.application-item.approved {
+  background: #f0fff4;
+  border-color: #48bb78;
+}
+
+.application-item.rejected {
+  background: #fff5f5;
+  border-color: #f56565;
+}
+
+.application-item.pending {
+  background: #fffff0;
+  border-color: #ecc94b;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.app-badge {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2d3748;
+}
+
+.app-status {
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.app-status.pending {
+  background: #faf089;
+  color: #744210;
+}
+
+.app-status.approved {
+  background: #c6f6d5;
+  color: #22543d;
+}
+
+.app-status.rejected {
+  background: #fed7d7;
+  color: #742a2a;
+}
+
+.app-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.app-details small {
+  color: #718096;
+  font-size: 0.85rem;
+}
+
+.admin-notes {
+  margin-top: 10px;
+  padding: 10px;
+  background: #f7fafc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 1.5rem;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .badges-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .badges-header h1 {
+    font-size: 2rem;
+  }
+
+  .badge-card {
+    padding: 20px;
+  }
+}

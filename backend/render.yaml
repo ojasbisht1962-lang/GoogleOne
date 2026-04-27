@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: trustedhands-backend
+    env: python
+    runtime: python-3.11.0
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: MONGODB_URL
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: https://trusted-hands.vercel.app,https://trustedhands-backend.onrender.com,http://localhost:3000
+      - key: BACKEND_URL
+        value: https://trustedhands-backend.onrender.com
+      - key: FRONTEND_URL
+        value: https://trusted-hands.vercel.app
