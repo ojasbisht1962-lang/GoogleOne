@@ -72,7 +72,8 @@ export default function BharosaChatbot() {
       
       // Add system prompt and current message
       const prompt = `${initialPrompt}\n\nConversation history:\n${conversationHistory.map(m => `${m.role}: ${m.content}`).join('\n')}\n\nUser: ${text}\n\nAssistant:`;
-      
+      // ---> ENTER THE DEBUGGING CODE HERE <---
+      console.log("Puter Object State:", window.puter);
       // Call puter.js AI
       const response = await window.puter.ai.chat(prompt);
       let reply = response || "Sorry, I couldn't get a response.";
